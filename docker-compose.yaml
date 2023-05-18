@@ -1,0 +1,8 @@
+version: '3.5'
+
+services:
+  medicine:
+    build: .
+    container_name: medicine
+    ports:
+      - 8502:8502
