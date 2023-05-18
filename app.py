@@ -8,10 +8,15 @@ import matplotlib.pyplot as plt
 
 st.title("Clustering Produk Kesehatan")
 
-st.markdown("## Data")
+# upload file excel
+file = st.file_uploader("Upload file excel", ["xlsx", "csv"])
 
-# membaca data dalam file excel
-data = pd.read_excel("./data/data.xlsx")
+if file:
+    data = pd.read_excel(file)
+else:
+    data = pd.read_excel("./data/data.xlsx")
+
+st.markdown("## Data")
 
 # menampilkan data ke user
 st.write(data.head())
